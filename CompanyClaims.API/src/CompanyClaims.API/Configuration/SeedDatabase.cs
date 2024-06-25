@@ -48,7 +48,7 @@ namespace CompanyClaims.API.Configuration
             {
                 UCR = "ABDFGFIWS123",
                 AssuredName = "TestClaim1",
-                ClaimDate = DateTime.UtcNow,
+                ClaimDate = DateTime.UtcNow.AddDays(-3),
                 ClaimTypeId = 1,
                 Closed = false,
                 CompanyId = 1
