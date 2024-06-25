@@ -5,6 +5,6 @@ namespace CompanyClaims.Data.Repositories.Interfaces
 {
     public interface ICompanyRepository
     {
-        Task<Company> GetCompanyByName(string companyName);
+        public Task<Company> GetCompanyByName(string companyName);
     }
 }

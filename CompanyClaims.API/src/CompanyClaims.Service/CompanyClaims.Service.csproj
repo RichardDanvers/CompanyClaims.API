@@ -6,7 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CompanyClaims.Data\CompanyClaims.Data.csproj" />
     <ProjectReference Include="..\CompanyClaims.Models\CompanyClaims.Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
   </ItemGroup>
 
 </Project>

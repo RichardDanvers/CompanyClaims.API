@@ -22,7 +22,8 @@ namespace CompanyClaims.Data.Repositories
 
         public async Task<Claim> UpdateClaim(Claim claim)
         {
-            var existingClaim = await GetClaimByUCR(claim.UCR) ?? throw new NullReferenceException($"Claim with UCR: {claim.UCR} could not be found.");
+            var existingClaim = await GetClaimByUCR(claim.UCR) 
+                ?? throw new NullReferenceException($"Claim with UCR: {claim.UCR} could not be found.");
 
             SetClaimProperties(claim, existingClaim);
             await _dbContext.SaveChangesAsync();

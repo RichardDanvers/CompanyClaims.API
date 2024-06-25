@@ -2,11 +2,11 @@
 
 namespace CompanyClaims.Service.Interfaces
 {
-    internal interface IClaimService
+    public interface IClaimService
     {
-        List<Claim> GetClaimsByCompanyName(string companyName);
-        Claim GetClaimByUCR(string uniqueClaimReference);
+        Task<List<Claim>> GetClaimsByCompanyName(string companyName);
+        Task<Claim> GetClaimByUCR(string uniqueClaimReference);
 
-        Claim UpdateClaim(Claim claim);
+        Task<Claim> UpdateClaim(Claim claim);
     }
 }

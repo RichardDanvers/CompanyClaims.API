@@ -2,8 +2,8 @@
 
 namespace CompanyClaims.Service.Interfaces
 {
-    internal interface ICompanyService
+    public interface ICompanyService
     {
-        Task<Company> GetCompanyByName(string companyName);
+        public Task<Company> GetCompanyByName(string companyName);
     }
 }

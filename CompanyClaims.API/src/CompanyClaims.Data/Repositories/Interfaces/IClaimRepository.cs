@@ -4,8 +4,8 @@ namespace CompanyClaims.Data.Repositories.Interfaces
 {
     public interface IClaimRepository
     {
-        Task<IEnumerable<Claim>> GetClaimsByCompanyId(int companyId);
-        Task<Claim> GetClaimByUCR(string ucr);
-        Task<Claim> UpdateClaim(Claim claim);
+        public Task<IEnumerable<Claim>> GetClaimsByCompanyId(int companyId);
+        public Task<Claim> GetClaimByUCR(string ucr);
+        public Task<Claim> UpdateClaim(Claim claim);
     }
 }
