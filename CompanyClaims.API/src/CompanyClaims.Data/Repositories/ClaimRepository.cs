@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CompanyClaims.Data.Repositories
 {
-    internal class ClaimRepository : IClaimRepository
+    public class ClaimRepository : IClaimRepository
     {
         private readonly CompanyClaimsDbContext _dbContext;
 

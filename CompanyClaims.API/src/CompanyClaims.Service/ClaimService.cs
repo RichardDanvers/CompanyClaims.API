@@ -12,9 +12,10 @@ namespace CompanyClaims.Service
         private readonly ICompanyRepository _companyRepository;
         private readonly IMapper _mapper;
 
-        public ClaimService(IClaimRepository claimRepository, IMapper mapper)
+        public ClaimService(IClaimRepository claimRepository, ICompanyRepository companyRepository, IMapper mapper)
         {
             _claimRepository = claimRepository;
+            _companyRepository = companyRepository;
             _mapper = mapper;
         }
 
