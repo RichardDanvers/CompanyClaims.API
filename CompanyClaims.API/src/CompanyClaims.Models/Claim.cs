@@ -25,7 +25,7 @@ namespace CompanyClaims.Models
 
         public bool Closed { get; set; } = false;
 
-        public double ClaimAgeInDays
+        public int ClaimAgeInDays
         {
             get => ((int)(DateTime.UtcNow - ClaimDate).TotalDays);
         }
