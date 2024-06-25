@@ -4,9 +4,9 @@ namespace CompanyClaims.Data.Entities
 {
     public class ClaimType
     {
-        int Id { get; set; }
+        public int Id { get; set; }
 
         [MaxLength(20)]
-        string Name { get; set; }
+        public string Name { get; set; }
     }
 }
