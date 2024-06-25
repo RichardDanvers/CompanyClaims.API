@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompanyClaims.Data", "src\C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{DBC272AA-D5B3-4306-ACBC-B2A28874BEF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyClaims.API.UnitTests", "test\CompanyClaims.API.UnitTests\CompanyClaims.API.UnitTests.csproj", "{82038CEE-D46C-4289-BDD1-3169304E26E6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyClaims.API.UnitTests", "tests\CompanyClaims.API.UnitTests\CompanyClaims.API.UnitTests.csproj", "{82038CEE-D46C-4289-BDD1-3169304E26E6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyClaims.Service.UnitTests", "tests\CompanyClaims.Service.UnitTests\CompanyClaims.Service.UnitTests.csproj", "{F7429AF4-60EB-460A-97DD-20118A71F403}"
 EndProject

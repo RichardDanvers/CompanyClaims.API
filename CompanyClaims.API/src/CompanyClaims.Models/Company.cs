@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace CompanyClaims.Models
+﻿namespace CompanyClaims.Models
 {
     public class Company
     {

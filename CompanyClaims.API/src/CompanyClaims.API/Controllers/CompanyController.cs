@@ -1,3 +1,4 @@
+using CompanyClaims.Models;
 using CompanyClaims.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,6 +16,9 @@ namespace CompanyClaims.API.Controllers
         }
 
         [HttpGet("{companyName}")]
+        [ProducesResponseType(typeof(Company), 200)]
+        [ProducesResponseType(typeof(string), 400)]
+        [ProducesResponseType(typeof(string), 404)]
         public async Task<IActionResult> Get(string companyName)
         {
             if (string.IsNullOrWhiteSpace(companyName)) return BadRequest("Company name must be provided");

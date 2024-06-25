@@ -16,6 +16,9 @@ namespace CompanyClaims.API.Controllers
         }
 
         [HttpGet("{UCR}")]
+        [ProducesResponseType(typeof(Claim), 200)]
+        [ProducesResponseType(typeof(string), 400)]
+        [ProducesResponseType(typeof(string), 404)]
         public async Task<IActionResult> Get(string UCR)
         {
             if (string.IsNullOrWhiteSpace(UCR)) return BadRequest("Unique claim reference (UCR) must be provided");
@@ -28,6 +31,9 @@ namespace CompanyClaims.API.Controllers
         }
 
         [HttpGet("GetByCompany/{companyName}")]
+        [ProducesResponseType(typeof(List<Claim>), 200)]
+        [ProducesResponseType(typeof(string), 400)]
+        [ProducesResponseType(typeof(string), 404)]
         public async Task<IActionResult> GetByCompanyName(string companyName)
         {
             if (string.IsNullOrWhiteSpace(companyName)) return BadRequest("Company name must be provided");
@@ -40,6 +46,9 @@ namespace CompanyClaims.API.Controllers
         }
 
         [HttpPatch]
+        [ProducesResponseType(typeof(Claim), 200)]
+        [ProducesResponseType(typeof(string), 400)]
+        [ProducesResponseType(typeof(string), 404)]
         public async Task<IActionResult> UpdateClaim(Claim claim)
         {
             try
