@@ -1,4 +1,4 @@
-﻿using System.Security.Claims;
+﻿using CompanyClaims.Models;
 
 namespace CompanyClaims.Service.Interfaces
 {

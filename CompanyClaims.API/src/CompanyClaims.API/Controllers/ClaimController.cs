@@ -1,4 +1,5 @@
-﻿using CompanyClaims.Service.Interfaces;
+﻿using CompanyClaims.Models;
+using CompanyClaims.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CompanyClaims.API.Controllers
@@ -14,7 +15,7 @@ namespace CompanyClaims.API.Controllers
             _claimService = claimService;
         }
 
-        [HttpGet]
+        [HttpGet("{UCR}")]
         public async Task<IActionResult> Get(string UCR)
         {
             if (string.IsNullOrWhiteSpace(UCR)) return BadRequest("Unique claim reference (UCR) must be provided");
@@ -24,6 +25,33 @@ namespace CompanyClaims.API.Controllers
             if (claim == null) return NotFound($"Could not find claim with unique claim reference: {UCR}");
 
             return Ok(claim);
+        }
+
+        [HttpGet("GetByCompany/{UCR}")]
+        public async Task<IActionResult> GetByCompanyName(string companyName)
+        {
+            if (string.IsNullOrWhiteSpace(companyName)) return BadRequest("Company name must be provided");
+
+            var claim = await _claimService.GetClaimsByCompanyName(companyName);
+
+            if (claim == null || !claim.Any()) return NotFound($"No claims found for company: {companyName}");
+
+            return Ok(claim);
+        }
+
+        [HttpPatch]
+        public async Task<IActionResult> UpdateClaim(Claim claim)
+        {
+            try
+            {
+                var updatedClaim = await _claimService.UpdateClaim(claim);
+
+                return Ok(updatedClaim);
+            }
+            catch(NullReferenceException ex)
+            {
+                return NotFound(ex.Message);
+            }
         }
     }
 }

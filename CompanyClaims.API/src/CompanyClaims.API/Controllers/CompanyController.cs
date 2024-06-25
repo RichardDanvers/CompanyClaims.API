@@ -14,7 +14,7 @@ namespace CompanyClaims.API.Controllers
             _companyService = companyService;
         }
 
-        [HttpGet]
+        [HttpGet("{companyName}")]
         public async Task<IActionResult> Get(string companyName)
         {
             if (string.IsNullOrWhiteSpace(companyName)) return BadRequest("Company name must be provided");
