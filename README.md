@@ -9,4 +9,19 @@ The output for one of the get claim results can be used for the patch/update req
 
 Troubleshooting:
 
-- This project is configured to use SSL local certificates, if you find it is not rendering as expected enabled the "Allow invalid certificates for resources loaded from localhost" flag in chrome
+- This project is configured to use SSL local certificates, if you find it is not rendering as expected enable the "Allow invalid certificates for resources loaded from localhost" flag in chrome
+
+Examples:
+
+- Example JSON request for update claim would be as follows:
+  ```{
+  "ucr": "ABDFGFIWS126",
+  "companyId": 1,
+  "claimTypeId": 2,
+  "claimDate": "2024-01-27T22:06:22.3275107Z",
+  "lossDate": "0001-01-01T00:00:00",
+  "assuredName": "TestClaim-Updated",
+  "incurredLoss": 0,
+  "closed": true,
+  "claimAgeInDays": 150
+  }
