@@ -6,6 +6,17 @@ namespace CompanyClaims.API.Configuration
     {
         public static void Seed(CompanyClaimsDbContext dbContext)
         {
+            AddClaimTypes(dbContext);
+
+            AddCompanies(dbContext);
+
+            AddClaims(dbContext);
+
+            dbContext.SaveChanges();
+        }
+
+        private static void AddClaimTypes(CompanyClaimsDbContext dbContext)
+        {
             var claimType1 = new Data.Entities.ClaimType
             {
                 Id = 1,
@@ -27,7 +38,10 @@ namespace CompanyClaims.API.Configuration
             dbContext.ClaimTypes.Add(claimType1);
             dbContext.ClaimTypes.Add(claimType2);
             dbContext.ClaimTypes.Add(claimType3);
+        }
 
+        private static void AddCompanies(CompanyClaimsDbContext dbContext)
+        {
             var company1 = new Data.Entities.Company
             {
                 Id = 1,
@@ -42,8 +56,10 @@ namespace CompanyClaims.API.Configuration
             };
 
             dbContext.Companies.Add(company1);
+        }
 
-
+        private static void AddClaims(CompanyClaimsDbContext dbContext)
+        {
             var claim1 = new Data.Entities.Claim
             {
                 UCR = "ABDFGFIWS123",
@@ -66,8 +82,6 @@ namespace CompanyClaims.API.Configuration
 
             dbContext.Claims.Add(claim1);
             dbContext.Claims.Add(claim2);
-
-            dbContext.SaveChanges();
         }
     }
 }
