@@ -1,5 +1,5 @@
-using Microsoft.AspNetCore.Mvc;
 using CompanyClaims.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CompanyClaims.API.Controllers
 {
