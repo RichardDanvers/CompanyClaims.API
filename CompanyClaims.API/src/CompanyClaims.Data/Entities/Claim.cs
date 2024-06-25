@@ -2,7 +2,7 @@
 
 namespace CompanyClaims.Data.Entities
 {
-    internal class Claim
+    public class Claim
     {
         string UCR { get; set; }
 
