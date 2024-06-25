@@ -10,7 +10,7 @@ namespace CompanyClaims.API.Configuration
 {
     public static class RegisterServices
     {
-        public static void Register(this IServiceCollection services, bool useInMemory)
+        public static void Register(this IServiceCollection services)
         {
             //Register services
             services.AddTransient<IClaimService, ClaimService>();
@@ -20,23 +20,14 @@ namespace CompanyClaims.API.Configuration
             services.AddScoped<IClaimRepository, ClaimRepository>();
             services.AddScoped<ICompanyRepository, CompanyRepository>();
 
-            //Register db context
-            if (useInMemory)
-            {
-                var inMemoryOptions = new DbContextOptionsBuilder<CompanyClaimsDbContext>()
-                    .UseInMemoryDatabase("CompanyClaimsTest")
-                    .ConfigureWarnings(b => b.Ignore(InMemoryEventId.TransactionIgnoredWarning))
-                    .Options;
+            var inMemoryOptions = new DbContextOptionsBuilder<CompanyClaimsDbContext>()
+                .UseInMemoryDatabase("CompanyClaimsTest")
+                .ConfigureWarnings(b => b.Ignore(InMemoryEventId.TransactionIgnoredWarning))
+                .Options;
 
-                services.AddDbContext<CompanyClaimsDbContext>(options => 
-                    options.UseInMemoryDatabase("CompanyClaimsTest")
-                    .ConfigureWarnings(b => b.Ignore(InMemoryEventId.TransactionIgnoredWarning)));
-            }
-            else
-            {
-                services.AddDbContext<CompanyClaimsDbContext>(
-                    options => options.UseSqlServer("name=ConnectionStrings:DefaultConnection"));
-            }
+            services.AddDbContext<CompanyClaimsDbContext>(options =>
+                options.UseInMemoryDatabase("CompanyClaimsTest")
+                .ConfigureWarnings(b => b.Ignore(InMemoryEventId.TransactionIgnoredWarning)));
         }
     }
 }

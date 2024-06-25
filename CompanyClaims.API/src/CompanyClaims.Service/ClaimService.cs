@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using CompanyClaims.Data.Repositories.Interfaces;
+using CompanyClaims.Models;
 using CompanyClaims.Service.Interfaces;
-using System.Security.Claims;
 
 namespace CompanyClaims.Service
 {

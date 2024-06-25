@@ -4,9 +4,9 @@ namespace CompanyClaims.Service.Interfaces
 {
     public interface IClaimService
     {
-        Task<List<Claim>> GetClaimsByCompanyName(string companyName);
-        Task<Claim> GetClaimByUCR(string uniqueClaimReference);
+        public Task<List<Claim>> GetClaimsByCompanyName(string companyName);
+        public Task<Claim> GetClaimByUCR(string uniqueClaimReference);
 
-        Task<Claim> UpdateClaim(Claim claim);
+        public Task<Claim> UpdateClaim(Claim claim);
     }
 }

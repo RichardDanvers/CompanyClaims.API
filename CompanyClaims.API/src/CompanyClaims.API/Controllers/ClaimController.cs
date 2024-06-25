@@ -27,7 +27,7 @@ namespace CompanyClaims.API.Controllers
             return Ok(claim);
         }
 
-        [HttpGet("GetByCompany/{UCR}")]
+        [HttpGet("GetByCompany/{companyName}")]
         public async Task<IActionResult> GetByCompanyName(string companyName)
         {
             if (string.IsNullOrWhiteSpace(companyName)) return BadRequest("Company name must be provided");

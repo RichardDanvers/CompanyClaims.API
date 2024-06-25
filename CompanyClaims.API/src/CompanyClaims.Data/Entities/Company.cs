@@ -27,6 +27,6 @@ namespace CompanyClaims.Data.Entities
 
         public bool Active { get; set; }
 
-        public DateTime InsuranceEndDate { get; set; }
+        public DateTime? InsuranceEndDate { get; set; }
     }
 }
