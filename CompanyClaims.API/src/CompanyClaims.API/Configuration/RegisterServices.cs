@@ -4,6 +4,7 @@ using CompanyClaims.Data.Repositories.Interfaces;
 using CompanyClaims.Service;
 using CompanyClaims.Service.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 
 namespace CompanyClaims.API.Configuration
 {
@@ -20,8 +21,22 @@ namespace CompanyClaims.API.Configuration
             services.AddScoped<ICompanyRepository, CompanyRepository>();
 
             //Register db context
-            services.AddDbContext<CompanyClaimsDbContext>(
-                options => options.UseSqlServer("name=ConnectionStrings:DefaultConnection"));
+            if (true)
+            {
+                var inMemoryOptions = new DbContextOptionsBuilder<CompanyClaimsDbContext>()
+                    .UseInMemoryDatabase("CompanyClaimsTest")
+                    .ConfigureWarnings(b => b.Ignore(InMemoryEventId.TransactionIgnoredWarning))
+                    .Options;
+
+                services.AddDbContext<CompanyClaimsDbContext>(options => 
+                    options.UseInMemoryDatabase("CompanyClaimsTest")
+                    .ConfigureWarnings(b => b.Ignore(InMemoryEventId.TransactionIgnoredWarning)));
+            }
+            else
+            {
+                services.AddDbContext<CompanyClaimsDbContext>(
+                    options => options.UseSqlServer("name=ConnectionStrings:DefaultConnection"));
+            }
         }
     }
 }

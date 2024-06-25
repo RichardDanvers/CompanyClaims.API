@@ -39,6 +39,7 @@ namespace CompanyClaims.Data.Repositories
             existingClaim.CompanyId = claim.CompanyId;
             existingClaim.Closed = claim.Closed;
             existingClaim.IncurredLoss = claim.IncurredLoss;
+            existingClaim.ClaimTypeId = claim.ClaimTypeId;
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿CREATE TABLE [dbo].[Claims] (
     [UCR]           VARCHAR (20)    NULL,
     [CompanyId]     INT             NULL,
+    [ClaimTypeId]     INT             NULL,
     [ClaimDate]     DATETIME        NULL,
     [LossDate]      DATETIME        NULL,
     [Assured Name]  VARCHAR (100)   NULL,

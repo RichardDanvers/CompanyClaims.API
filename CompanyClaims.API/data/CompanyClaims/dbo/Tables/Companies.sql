@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[Company] (
+﻿CREATE TABLE [dbo].[Companies] (
     [Id]               INT           NULL,
     [Name]             VARCHAR (200) NULL,
     [Address1]         VARCHAR (100) NULL,

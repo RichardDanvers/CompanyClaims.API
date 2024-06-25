@@ -1,4 +1,5 @@
 using CompanyClaims.API.Configuration;
+using CompanyClaims.Data.Context;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,5 +26,11 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<CompanyClaimsDbContext>();
+    SeedDatabase.Seed(context);
+}
 
 app.Run();

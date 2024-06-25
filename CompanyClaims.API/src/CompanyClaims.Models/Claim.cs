@@ -13,6 +13,7 @@ namespace CompanyClaims.Models
         public Company Company { get; set; }
 
         [Required]
+        public int ClaimTypeId { get; set; }
 
         public DateTime LossDate { get; set; }
 

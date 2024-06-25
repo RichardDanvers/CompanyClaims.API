@@ -1,5 +1,6 @@
 using CompanyClaims.Models;
 using CompanyClaims.Service.Interfaces;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CompanyClaims.API.Controllers
@@ -18,15 +19,13 @@ namespace CompanyClaims.API.Controllers
         [HttpGet]
         public async Task<IActionResult> Get(string companyName)
         {
-            try
-            {
-                var company = await _companyService.GetCompanyByName(companyName);
-                return Ok(company);
-            }
-            catch (NullReferenceException ex)
-            {
-                return NotFound(ex.Message);
-            }
+            if (string.IsNullOrWhiteSpace(companyName)) return BadRequest("Company name must be provided");
+
+            var company = await _companyService.GetCompanyByName(companyName);
+
+            if (company == null) return NotFound($"Could not find company with name: {companyName}");
+
+            return Ok(company);
         }
     }
 }
