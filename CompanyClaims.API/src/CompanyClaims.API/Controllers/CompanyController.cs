@@ -1,6 +1,4 @@
-using CompanyClaims.Models;
 using CompanyClaims.Service.Interfaces;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CompanyClaims.API.Controllers
