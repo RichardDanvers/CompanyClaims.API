@@ -1,8 +1,6 @@
 using CompanyClaims.API.Controllers;
 using CompanyClaims.Models;
-using CompanyClaims.Service;
 using CompanyClaims.Service.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using NSubstitute;
 
