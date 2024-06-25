@@ -10,7 +10,7 @@ namespace CompanyClaims.API.Configuration
 {
     public static class RegisterServices
     {
-        public static void Register(this IServiceCollection services)
+        public static void Register(this IServiceCollection services, bool useInMemory)
         {
             //Register services
             services.AddTransient<IClaimService, ClaimService>();
@@ -21,7 +21,7 @@ namespace CompanyClaims.API.Configuration
             services.AddScoped<ICompanyRepository, CompanyRepository>();
 
             //Register db context
-            if (true)
+            if (useInMemory)
             {
                 var inMemoryOptions = new DbContextOptionsBuilder<CompanyClaimsDbContext>()
                     .UseInMemoryDatabase("CompanyClaimsTest")

@@ -4,7 +4,7 @@ using CompanyClaims.Data.Context;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.Register();
+builder.Services.Register(builder.Configuration.GetValue<bool>("UseInMemoryDatabase"));
 builder.Services.AddAutoMapper(typeof(DefaultAutoMapperProfile));
 
 builder.Services.AddControllers();
