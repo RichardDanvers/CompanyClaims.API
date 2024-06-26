@@ -1,7 +1,7 @@
 # CompanyClaims.API
 Simple RESTful api to get company information and relevant claims
 
-To test the solution, run the project and the Swagger output for solution should be rendered.
+To test the solution, run the project and the Swagger interface for solution should be rendered.
 
 Data is loaded into an in memory database for the sake of this demo (so will be reset each time the project is run), data can be viewed/edited from within the `SeedDatabase` class.
 
